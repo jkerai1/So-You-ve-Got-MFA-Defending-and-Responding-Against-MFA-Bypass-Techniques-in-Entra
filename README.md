@@ -6,7 +6,7 @@ My intention is create a more formal writeup based on the content presented.
 
 The videos have been stripped out for file size and replaced with public referenced videos instead.
 
-Shoutout to anyone whos content I have referenced/featured! 
+Shoutout to anyone who's content I have referenced/featured! They were really helpful for confirming my knowledge or teaching me new things :D
 
 
 # References 
@@ -134,35 +134,37 @@ https://timmyit.com/2022/11/08/block-linux-enrollment-into-microsoft-intune-with
 
 Can Restrict Fido keys with AAGUIDs. Use passkey explorer https://passkeydeveloper.github.io/passkey-authenticator-aaguids/explorer/?combined 
 
-https://github.com/RedByte1337/GraphSpy - GraphSpy is popular tool for attackers to add MFA
+https://github.com/RedByte1337/GraphSpy - GraphSpy is popular tool for attackers to add MFA  
 
 
 Slide 41: TLD Blocking
 
 https://github.com/jkerai1/TLD-TABL-Block 
-https://jeffreyappel.nl/block-gtld-zip-fqdn-domains-with-windows-firewall-and-defender-for-endpoint/#:~:text=With%20the%20use%20of%20Defender
+https://jeffreyappel.nl/block-gtld-zip-fqdn-domains-with-windows-firewall-and-defender-for-endpoint/#:~:text=With%20the%20use%20of%20Defender  
 
 Slide 42: Typosquat
 
-https://github.com/jkerai1/DNSTwistToMDEIOC
+https://github.com/jkerai1/DNSTwistToMDEIOC  
 
 KQL:
+```
 DeviceEvents
 | where (ActionType == "SmartScreenUrlWarning" and AdditionalFields.Experience == "CustomBlockList") or (AdditionalFields.ResponseCategory == "CustomBlockList" and ActionType == "ExploitGuardNetworkProtectionBlocked")
 | join kind=leftouter DeviceFileCertificateInfo on SHA1
 | join kind=leftouter IdentityInfo on $left.InitiatingProcessAccountUpn == $right.AccountUPN
 | summarize by FileName, RemoteUrl,DeviceName, Signer, InitiatingProcessAccountUpn, InitiatingProcessFileName, SHA1,TimeGenerated, InitiatingProcessVersionInfoProductName, JobTitle
-
+```
 Slide 43: DNS OSINT
-https://aadinternals.com/osint/
+
+https://aadinternals.com/osint/  
 
 
-Slide 44: onmicrosoft
-https://c7solutions.com/2024/04/blocking-onmicrosoft-com-emails-in-exchange-online-protection
+Slide 44: onmicrosoft  
+https://c7solutions.com/2024/04/blocking-onmicrosoft-com-emails-in-exchange-online-protection  
 
 Slide 45: Teams
 
-https://labs.jumpsec.com/advisory-idor-in-microsoft-teams-allows-for-external-tenants-to-introduce-malware/
+https://labs.jumpsec.com/advisory-idor-in-microsoft-teams-allows-for-external-tenants-to-introduce-malware/  
 Novel take on Webhook phishing: https://www.blackhillsinfosec.com/wishing-webhook-phishing-in-teams) 
 
 Slide 46: MFA Boundary
