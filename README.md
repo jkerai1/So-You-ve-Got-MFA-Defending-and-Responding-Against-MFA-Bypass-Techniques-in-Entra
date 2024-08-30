@@ -21,7 +21,7 @@ Smartscreen/Exploit Guard KQL:
 DeviceEvents
 | where ActionType == "SmartScreenUrlWarning" or ActionType == "ExploitGuardNetworkProtectionBlocked"
 ```
-Browser history/Artificats: https://www.linkedin.com/pulse/stealing-passwords-defender-endpoint-jay-kerai
+Browser history/artifacts: https://www.linkedin.com/pulse/stealing-passwords-defender-endpoint-jay-kerai
 
 __Slide 4:__
 Merill Fernado Demo: https://www.youtube.com/watch?v=tI1bdVohOK8
