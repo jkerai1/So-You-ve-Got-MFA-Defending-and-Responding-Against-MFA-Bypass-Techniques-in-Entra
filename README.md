@@ -13,7 +13,7 @@ Shoutout to anyone who's content I have referenced/featured! They were really he
 
 Slide 3: How to bypass MFA? 
 
-https://github.com/kgretzky/evilginx2
+https://github.com/kgretzky/evilginx2  
 https://github.com/drk1wi/Modlishka
 
 Smartscreen/Exploit Guard KQL:
