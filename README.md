@@ -1,4 +1,4 @@
-# -So-You-ve-Got-MFA-Defending-and-Responding-Against-MFA-Bypass-Techniques-in-Entra
+# So-You-ve-Got-MFA-Defending-and-Responding-Against-MFA-Bypass-Techniques-in-Entra
 
 This talk was given as part of https://www.meetup.com/m365sandcug/events/302644214 and serves as a much needed update to my [earlier article](https://www.linkedin.com/posts/jay-kerai-cyber_devfender-entra-token-activity-7122902992873287681-P03M?utm_source=share)
 
