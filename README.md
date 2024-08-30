@@ -168,7 +168,7 @@ https://c7solutions.com/2024/04/blocking-onmicrosoft-com-emails-in-exchange-onli
 __Slide 45: Teams__  
 
 https://labs.jumpsec.com/advisory-idor-in-microsoft-teams-allows-for-external-tenants-to-introduce-malware/  
-Novel take on Webhook phishing: https://www.blackhillsinfosec.com/wishing-webhook-phishing-in-teams) 
+Novel take on Webhook phishing: https://www.blackhillsinfosec.com/wishing-webhook-phishing-in-teams   
 
 Ideally keep all webhooks required in backend  
 
