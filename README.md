@@ -84,12 +84,12 @@ https://github.com/jkerai1/AzurePasswordProtectionCalculator
 https://github.com/jkerai1/GeneratePasswordListFromWebsite
 
 
-Sites:
-https://exposed.lol/ (free)  
-https://leakpeek.com/  
-intelx.io  
-https://www.hudsonrock.com/  
-https://leakcheck.io/  
+Sites:  
+[https://exposed.lol/](https://exposed.lol/) (free)  
+[https://leakpeek.com/  ](https://leakpeek.com/)
+[intelx.io  ](https://intelx.io/)  
+[https://www.hudsonrock.com/  ](https://www.hudsonrock.com/)  
+[https://leakcheck.io/  ](https://leakcheck.io/)
 
 
 __Slide 20: PIM__  
