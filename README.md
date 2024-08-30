@@ -168,6 +168,8 @@ Slide 45: Teams
 https://labs.jumpsec.com/advisory-idor-in-microsoft-teams-allows-for-external-tenants-to-introduce-malware/  
 Novel take on Webhook phishing: https://www.blackhillsinfosec.com/wishing-webhook-phishing-in-teams) 
 
+Ideally keep all webhooks required in backend  
+
 Slide 46: MFA Boundary
 https://github.com/jkerai1/SoftwareCertificates
 
