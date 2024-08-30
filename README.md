@@ -11,7 +11,7 @@ Shoutout to anyone who's content I have referenced/featured! They were really he
 
 # References 
 
-Slide 3: How to bypass MFA? 
+__Slide 3: How to bypass MFA?__
 
 https://github.com/kgretzky/evilginx2  
 https://github.com/drk1wi/Modlishka
@@ -23,28 +23,35 @@ DeviceEvents
 ```
 Browser history/Artificats: https://www.linkedin.com/pulse/stealing-passwords-defender-endpoint-jay-kerai
 
-Slide 4:  
+__Slide 4:__
 Merill Fernado Demo: https://www.youtube.com/watch?v=tI1bdVohOK8
 
-Slide 6: Simplyfing the attack  
+__Slide 6: Simplyfing the attack__    
 
 https://www.microsoft.com/en-us/security/blog/2022/07/12/from-cookie-theft-to-bec-attackers-use-aitm-phishing-sites-as-entry-point-to-further-financial-fraud/
 
-Slide 8:
+__Slide 8:__  
 
 host locally: https://janbakker.tech/running-evilginx-3-0-on-windows/
 
-Slide 12: Conditional Access: Sign-in Risk (Identity Protection)
+__Slide 12: Conditional Access: Sign-in Risk (Identity Protection)__  
 
 https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-conditions#sign-in-risk  
 
-Slide 13: On the same note…Idle Session Time Out
+__Slide 13: On the same note…Idle Session Time Out__  
 
 https://learn.microsoft.com/en-us/microsoft-365/admin/manage/idle-session-timeout-web-apps?view=o365-worldwide#details-about-idle-session-timeout
 
-Slide 15: Conditional Access: Block Certain Device Platforms/User agents
+__Slide 15: Conditional Access: Block Certain Device Platforms/User agents__  
 
 Queries:
+
+Browser Parser - useful for adding to hunting queries:
+```
+union SigninLogs , AADNonInteractiveUserSignInLogs
+| where isnotempty(UserAgent)//| extend UserAgent = replace_string(UserAgent,";","")| where ResultType == "0"| extend UserAgentDetail = todynamic(parse_user_agent(UserAgent, dynamic(["browser","os","device"])))| extend OS = strcat(parse_json(tostring(UserAgentDetail.OperatingSystem)).Family," ",parse_json(tostring(UserAgentDetail.OperatingSystem)).MajorVersion,parse_json(tostring(UserAgentDetail. OperatingSystem)).MinorVersion)| extend UserAgentFamily = tostring(parse_json(tostring(UserAgentDetail.Browser)).Family)| extend UserAgentMajorVersion = toint(parse_json(tostring(UserAgentDetail.Browser)).MajorVersion)| extend UserAgentMinorVersion = toint(parse_json(tostring(UserAgentDetail.Browser)).MinorVersion)| where isnotempty(UserAgentMajorVersion)| extend UserAgentMinorVersion == iff(isempty(UserAgentMinorVersion),0,UserAgentMinorVersion)| summarize Count=count() by UserAgentFamily, UserAgentMajorVersion, UserAgentMinorVersion, OS| sort by Count
+```
+
 Below is from https://www.kqlsearch.com/
 ```
 let OfficeHomeSessionIds = 
@@ -63,19 +70,14 @@ AADSignInEventsBeta
 | join OfficeHomeSessionIds on SessionId
 | where OtherTimestamp > Timestamp and OtherCountry != Country
 ```
-Browser Parser - useful for adding to hunting queries:
-```
-union SigninLogs , AADNonInteractiveUserSignInLogs
-| where isnotempty(UserAgent)//| extend UserAgent = replace_string(UserAgent,";","")| where ResultType == "0"| extend UserAgentDetail = todynamic(parse_user_agent(UserAgent, dynamic(["browser","os","device"])))| extend OS = strcat(parse_json(tostring(UserAgentDetail.OperatingSystem)).Family," ",parse_json(tostring(UserAgentDetail.OperatingSystem)).MajorVersion,parse_json(tostring(UserAgentDetail. OperatingSystem)).MinorVersion)| extend UserAgentFamily = tostring(parse_json(tostring(UserAgentDetail.Browser)).Family)| extend UserAgentMajorVersion = toint(parse_json(tostring(UserAgentDetail.Browser)).MajorVersion)| extend UserAgentMinorVersion = toint(parse_json(tostring(UserAgentDetail.Browser)).MinorVersion)| where isnotempty(UserAgentMajorVersion)| extend UserAgentMinorVersion == iff(isempty(UserAgentMinorVersion),0,UserAgentMinorVersion)| summarize Count=count() by UserAgentFamily, UserAgentMajorVersion, UserAgentMinorVersion, OS| sort by Count
-```
 
-Slide 18: CAE
+__Slide 18: CAE__  
 
 https://cloudbrothers.info/en/continuous-access-evaluation/
 
 https://openid.net/specs/openid-sse-framework-1_0-01.html
 
-Slide 19: Banned passwords
+__Slide 19: Banned passwords__  
 
 Tools
 https://github.com/jkerai1/AzurePasswordProtectionCalculator
@@ -83,67 +85,67 @@ https://github.com/jkerai1/GeneratePasswordListFromWebsite
 
 
 Sites:
-https://exposed.lol/ (free)
-https://leakpeek.com/
-intelx.io
-https://www.hudsonrock.com/
-https://leakcheck.io/
+https://exposed.lol/ (free)  
+https://leakpeek.com/  
+intelx.io  
+https://www.hudsonrock.com/  
+https://leakcheck.io/  
 
 
-Slide 20: PIM
+__Slide 20: PIM__  
 
-https://jeffreyappel.nl/protect-against-aitm-mfa-phishing-attacks-using-microsoft-technology/
+https://jeffreyappel.nl/protect-against-aitm-mfa-phishing-attacks-using-microsoft-technology/  
 https://www.linkedin.com/posts/jay-kerai-cyber_entra-aitm-token-activity-7233084655942410240-e5zO
 
-Slide 23: Attacker Controls the Proxy
+__Slide 23: Attacker Controls the Proxy__  
 
 https://github.com/nicolonsky/AzureAiTMFunction 
 
-Slide 24-28: Canary Token
+__Slide 24-28: Canary Token__  
 
-https://didsomeoneclone.me/
+https://didsomeoneclone.me/  
 https://www.linkedin.com/pulse/punishing-aitms-using-css-flask-jay-kerai-ffrhe/
 
 
-Slide 31: FIDO
+__Slide 31: FIDO__  
 
-https://www.w3.org/TR/webauthn/#dictdef-tokenbinding
-https://www.rfc-editor.org/rfc/rfc8471
-https://www.silverfort.com/blog/using-mitm-to-bypass-fido2/
+https://www.w3.org/TR/webauthn/#dictdef-tokenbinding  
+https://www.rfc-editor.org/rfc/rfc8471  
+https://www.silverfort.com/blog/using-mitm-to-bypass-fido2/  
 
-Slide 32-33: FIDO quirks
-https://www.linkedin.com/pulse/passwordlessphishing-resistant-considerations-entra-jay-kerai-zh6nc
-https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/update-mgpolicyauthorizationpolicy?view=graph-powershell-1.0#-allowedtousesspr
+__Slide 32-33: FIDO quirks__  
+https://www.linkedin.com/pulse/passwordlessphishing-resistant-considerations-entra-jay-kerai-zh6nc  
+https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/update-mgpolicyauthorizationpolicy?view=graph-powershell-1.0#-allowedtousesspr  
 
-Slide 34: PRT
-https://learn.microsoft.com/en-us/entra/identity/devices/concept-primary-refresh-token
+__Slide 34: PRT__  
+https://learn.microsoft.com/en-us/entra/identity/devices/concept-primary-refresh-token  
 
-Slide 35: TPM/PRT
+__Slide 35: TPM/PRT__  
 
-TPM Attest: https://youtu.be/j0D3So1q-IA?t=554
-https://call4cloud.nl/2024/07/istpmattested-enrollment-attestation/
-https://github.com/Cloud-Architekt/AzureAD-Attack-Defense/ 
+TPM Attest: https://youtu.be/j0D3So1q-IA?t=554  
+https://call4cloud.nl/2024/07/istpmattested-enrollment-attestation/  
+https://github.com/Cloud-Architekt/AzureAD-Attack-Defense/   
 
 
-Slide 37: CAE Demo
+__Slide 37: CAE Demo__  
 
-https://learn.microsoft.com/en-us/microsoft-365/enterprise/o365-data-locations?view=o365-worldwide
+https://learn.microsoft.com/en-us/microsoft-365/enterprise/o365-data-locations?view=o365-worldwide  
 
-Slide 38: Conditional Access: Lock Down MFA registration/ Device Enrolment
+__Slide 38: Conditional Access: Lock Down MFA registration/ Device Enrolment__  
 
-https://timmyit.com/2022/11/08/block-linux-enrollment-into-microsoft-intune-with-conditional-access/
+https://timmyit.com/2022/11/08/block-linux-enrollment-into-microsoft-intune-with-conditional-access/  
 
-Can Restrict Fido keys with AAGUIDs. Use passkey explorer https://passkeydeveloper.github.io/passkey-authenticator-aaguids/explorer/?combined 
+Can Restrict Fido keys with AAGUIDs. Use passkey explorer https://passkeydeveloper.github.io/passkey-authenticator-aaguids/explorer/?combined  
 
 https://github.com/RedByte1337/GraphSpy - GraphSpy is popular tool for attackers to add MFA  
 
 
-Slide 41: TLD Blocking
+__Slide 41: TLD Blocking__  
 
-https://github.com/jkerai1/TLD-TABL-Block 
+https://github.com/jkerai1/TLD-TABL-Block  
 https://jeffreyappel.nl/block-gtld-zip-fqdn-domains-with-windows-firewall-and-defender-for-endpoint/#:~:text=With%20the%20use%20of%20Defender  
 
-Slide 42: Typosquat
+__Slide 42: Typosquat__  
 
 https://github.com/jkerai1/DNSTwistToMDEIOC  
 
@@ -155,27 +157,27 @@ DeviceEvents
 | join kind=leftouter IdentityInfo on $left.InitiatingProcessAccountUpn == $right.AccountUPN
 | summarize by FileName, RemoteUrl,DeviceName, Signer, InitiatingProcessAccountUpn, InitiatingProcessFileName, SHA1,TimeGenerated, InitiatingProcessVersionInfoProductName, JobTitle
 ```
-Slide 43: DNS OSINT
+__Slide 43: DNS OSINT__  
 
 https://aadinternals.com/osint/  
 
 
-Slide 44: onmicrosoft  
+__Slide 44: onmicrosoft__    
 https://c7solutions.com/2024/04/blocking-onmicrosoft-com-emails-in-exchange-online-protection  
 
-Slide 45: Teams
+__Slide 45: Teams__  
 
 https://labs.jumpsec.com/advisory-idor-in-microsoft-teams-allows-for-external-tenants-to-introduce-malware/  
 Novel take on Webhook phishing: https://www.blackhillsinfosec.com/wishing-webhook-phishing-in-teams) 
 
 Ideally keep all webhooks required in backend  
 
-Slide 46: MFA Boundary
+__Slide 46: MFA Boundary__  
 https://github.com/jkerai1/SoftwareCertificates
 
-Slide 47: Misc
+__Slide 47: Misc__  
 
-browser passwords: https://www.linkedin.com/pulse/stealing-passwords-defender-endpoint-jay-kerai/
+browser passwords: https://www.linkedin.com/pulse/stealing-passwords-defender-endpoint-jay-kerai/  
 Netskope query:
 ```
 let NetskopeCloudflareWorkers = externaldata(Url: string)[@"https://raw.githubusercontent.com/netskopeoss/NetskopeThreatLabsIOCs/main/Phishing/CloudflareWorkers/IOCs/README.md"] with (format="csv", ignoreFirstRecord=True);let CloudFlareWorkers = NetskopeCloudflareWorkers| where Url startswith "hxxp"| extend domain = split(Url,'/')| extend RemoteUrl = replace_string(strcat(domain[1],domain[2]),'[.]','.') //remove defang from externaldata| distinct RemoteUrl; //calling RemoteUrl makes doing joins easier 😉 DeviceNetworkEvents| where RemoteUrl in (CloudFlareWorkers) //example, use as you please
@@ -185,15 +187,13 @@ Block Cloudflare domain post: https://www.linkedin.com/posts/jay-kerai-cyber_ait
 
 link shorteners (biolinky[.]co, bit[.]ly, drp[.]li)
 
-Slide 48: Responding to AITM
+__Slide 48: Responding to AITM__  
 
-https://github.com/Bert-JanP/Hunting-Queries-Detection-Rules/blob/main/Azure%20Active%20Directory/PotentialAiTMPhishing.md
+https://github.com/Bert-JanP/Hunting-Queries-Detection-Rules/blob/main/Azure%20Active%20Directory/PotentialAiTMPhishing.md  
 
-Slide 49: Responding (2)
+__Slide 49: Responding (2)__  
 
-https://techcommunity.microsoft.com/t5/microsoft-sentinel-blog/non-interactive-logins-minimizing-the-blind-spot/ba-p/2287932
+https://techcommunity.microsoft.com/t5/microsoft-sentinel-blog/non-interactive-logins-minimizing-the-blind-spot/ba-p/2287932  
 
-PS command:
-
-Get-CASMailbox | Set-CASMailbox -OWAEnabled $false
+PS command for disabling OWA: Get-CASMailbox | Set-CASMailbox -OWAEnabled $false
 
