@@ -194,6 +194,7 @@ https://github.com/Bert-JanP/Hunting-Queries-Detection-Rules/blob/main/Azure%20A
 __Slide 49: Responding (2)__  
 
 https://techcommunity.microsoft.com/t5/microsoft-sentinel-blog/non-interactive-logins-minimizing-the-blind-spot/ba-p/2287932  
+https://www.microsoft.com/en-us/security/blog/2022/11/16/token-tactics-how-to-prevent-detect-and-respond-to-cloud-token-theft/  
 
 PS command for disabling OWA: Get-CASMailbox | Set-CASMailbox -OWAEnabled $false
 
