@@ -23,10 +23,10 @@ DeviceEvents
 ```
 Browser history/Artificats: https://www.linkedin.com/pulse/stealing-passwords-defender-endpoint-jay-kerai
 
-Slide 4:
+Slide 4:  
 Merill Fernado Demo: https://www.youtube.com/watch?v=tI1bdVohOK8
 
-Slide 6: Simplyfing the attack
+Slide 6: Simplyfing the attack  
 
 https://www.microsoft.com/en-us/security/blog/2022/07/12/from-cookie-theft-to-bec-attackers-use-aitm-phishing-sites-as-entry-point-to-further-financial-fraud/
 
@@ -36,8 +36,7 @@ host locally: https://janbakker.tech/running-evilginx-3-0-on-windows/
 
 Slide 12: Conditional Access: Sign-in Risk (Identity Protection)
 
-Microsoft Entra ID Protection risk-based access policies - Microsoft Entra ID Protection | Microsoft Learn
-
+https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-conditions#sign-in-risk  
 
 Slide 13: On the same note…Idle Session Time Out
 
@@ -64,10 +63,12 @@ AADSignInEventsBeta
 | join OfficeHomeSessionIds on SessionId
 | where OtherTimestamp > Timestamp and OtherCountry != Country
 ```
+Browser Parser - useful for adding to hunting queries:
 ```
 union SigninLogs , AADNonInteractiveUserSignInLogs
-| where isnotempty(UserAgent)//| extend UserAgent = replace_string(UserAgent,";","")| where ResultType == "0"| extend UserAgentDetail = todynamic(parse_user_agent(UserAgent, dynamic(["browser","os","device"])))| extend OS = strcat(parse_json(tostring(UserAgentDetail.OperatingSystem)).Family," ",parse_json(tostring(UserAgentDetail.OperatingSystem)).MajorVersion,parse_json(tostring(UserAgentDetail. OperatingSystem)).MinorVersion)| extend UserAgentDetail = todynamic(parse_user_agent(UserAgent, "browser"))| extend UserAgentFamily = tostring(parse_json(tostring(UserAgentDetail.Browser)).Family)| extend UserAgentMajorVersion = toint(parse_json(tostring(UserAgentDetail.Browser)).MajorVersion)| extend UserAgentMinorVersion = toint(parse_json(tostring(UserAgentDetail.Browser)).MinorVersion)| where isnotempty(UserAgentMajorVersion)| extend UserAgentMinorVersion == iff(isempty(UserAgentMinorVersion),0,UserAgentMinorVersion)| summarize Count=count() by UserAgentFamily, UserAgentMajorVersion, UserAgentMinorVersion, OS| sort by Count
+| where isnotempty(UserAgent)//| extend UserAgent = replace_string(UserAgent,";","")| where ResultType == "0"| extend UserAgentDetail = todynamic(parse_user_agent(UserAgent, dynamic(["browser","os","device"])))| extend OS = strcat(parse_json(tostring(UserAgentDetail.OperatingSystem)).Family," ",parse_json(tostring(UserAgentDetail.OperatingSystem)).MajorVersion,parse_json(tostring(UserAgentDetail. OperatingSystem)).MinorVersion)| extend UserAgentFamily = tostring(parse_json(tostring(UserAgentDetail.Browser)).Family)| extend UserAgentMajorVersion = toint(parse_json(tostring(UserAgentDetail.Browser)).MajorVersion)| extend UserAgentMinorVersion = toint(parse_json(tostring(UserAgentDetail.Browser)).MinorVersion)| where isnotempty(UserAgentMajorVersion)| extend UserAgentMinorVersion == iff(isempty(UserAgentMinorVersion),0,UserAgentMinorVersion)| summarize Count=count() by UserAgentFamily, UserAgentMajorVersion, UserAgentMinorVersion, OS| sort by Count
 ```
+
 Slide 18: CAE
 
 https://cloudbrothers.info/en/continuous-access-evaluation/
