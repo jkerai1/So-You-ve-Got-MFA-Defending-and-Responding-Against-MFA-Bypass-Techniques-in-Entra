@@ -190,7 +190,13 @@ __Slide 47: Misc__
 browser passwords: https://www.linkedin.com/pulse/stealing-passwords-defender-endpoint-jay-kerai/  
 Netskope query:
 ```
-let NetskopeCloudflareWorkers = externaldata(Url: string)[@"https://raw.githubusercontent.com/netskopeoss/NetskopeThreatLabsIOCs/main/Phishing/CloudflareWorkers/IOCs/README.md"] with (format="csv", ignoreFirstRecord=True);let CloudFlareWorkers = NetskopeCloudflareWorkers| where Url startswith "hxxp"| extend domain = split(Url,'/')| extend RemoteUrl = replace_string(strcat(domain[1],domain[2]),'[.]','.') //remove defang from externaldata| distinct RemoteUrl; //calling RemoteUrl makes doing joins easier 😉 DeviceNetworkEvents| where RemoteUrl in (CloudFlareWorkers) //example, use as you please
+let NetskopeCloudflareWorkers = externaldata(Url: string)[@"https://raw.githubusercontent.com/netskopeoss/NetskopeThreatLabsIOCs/main/Phishing/CloudflareWorkers/IOCs/README.md"] with (format="csv", ignoreFirstRecord=True);
+let CloudFlareWorkers = NetskopeCloudflareWorkers
+| where Url startswith "hxxp"
+| extend domain = split(Url,'/')
+| extend RemoteUrl = replace_string(strcat(domain[1],domain[2]),'[.]','.') //remove defang from externaldata| distinct RemoteUrl; //calling RemoteUrl makes doing joins easier
+DeviceNetworkEvents
+| where RemoteUrl in (CloudFlareWorkers) //example, use as you please
 ```
 
 Block Cloudflare domain post: https://www.linkedin.com/posts/jay-kerai-cyber_aitm-cloudflare-workers-activity-7225926416226263040-wCWW
