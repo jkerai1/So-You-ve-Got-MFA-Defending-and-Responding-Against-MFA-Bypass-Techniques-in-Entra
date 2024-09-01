@@ -215,3 +215,13 @@ https://www.microsoft.com/en-us/security/blog/2022/11/16/token-tactics-how-to-pr
 
 PS command for disabling OWA: Get-CASMailbox | Set-CASMailbox -OWAEnabled $false
 
+Misc:  
+
+FOCI query Checking:  
+```
+let FOCI = externaldata(ClientID: string, Application: string)[@"https://raw.githubusercontent.com/secureworks/family-of-client-ids-research/main/known-foci-clients.csv"] with (format="csv", ignoreFirstRecord=true);
+union SigninLogs,AADNonInteractiveUserSignInLogs
+| join kind=leftouter FOCI on $left.AppId == $right.ClientID //Everything from left and only matching from right
+| extend isFOCI = iff(isnotempty(ClientID), bool(1), bool(0)) //yield true if a join was possible between records of the two tables
+| project-away ClientID
+```
