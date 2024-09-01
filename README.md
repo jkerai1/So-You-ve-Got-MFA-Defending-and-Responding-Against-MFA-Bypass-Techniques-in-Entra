@@ -185,7 +185,8 @@ let NetskopeCloudflareWorkers = externaldata(Url: string)[@"https://raw.githubus
 
 Block Cloudflare domain post: https://www.linkedin.com/posts/jay-kerai-cyber_aitm-cloudflare-workers-activity-7225926416226263040-wCWW
 
-link shorteners (biolinky[.]co, bit[.]ly, drp[.]li)
+link shorteners (biolinky[.]co, bit[.]ly, drp[.]li) 
+https://hackingblogs.com/hackers-use-url-shortner-to-hide-malicious-links-and-redirect-victims-to-phishing-pages/  
 
 __Slide 48: Responding to AITM__  
 
