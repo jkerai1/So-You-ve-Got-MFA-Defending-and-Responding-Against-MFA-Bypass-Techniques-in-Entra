@@ -49,7 +49,17 @@ Queries:
 Browser Parser - useful for adding to hunting queries:
 ```
 union SigninLogs , AADNonInteractiveUserSignInLogs
-| where isnotempty(UserAgent)//| extend UserAgent = replace_string(UserAgent,";","")| where ResultType == "0"| extend UserAgentDetail = todynamic(parse_user_agent(UserAgent, dynamic(["browser","os","device"])))| extend OS = strcat(parse_json(tostring(UserAgentDetail.OperatingSystem)).Family," ",parse_json(tostring(UserAgentDetail.OperatingSystem)).MajorVersion,parse_json(tostring(UserAgentDetail. OperatingSystem)).MinorVersion)| extend UserAgentFamily = tostring(parse_json(tostring(UserAgentDetail.Browser)).Family)| extend UserAgentMajorVersion = toint(parse_json(tostring(UserAgentDetail.Browser)).MajorVersion)| extend UserAgentMinorVersion = toint(parse_json(tostring(UserAgentDetail.Browser)).MinorVersion)| where isnotempty(UserAgentMajorVersion)| extend UserAgentMinorVersion == iff(isempty(UserAgentMinorVersion),0,UserAgentMinorVersion)| summarize Count=count() by UserAgentFamily, UserAgentMajorVersion, UserAgentMinorVersion, OS| sort by Count
+| where isnotempty(UserAgent)
+//| extend UserAgent = replace_string(UserAgent,";","")
+|where ResultType == "0"| extend UserAgentDetail = todynamic(parse_user_agent(UserAgent, dynamic(["browser","os","device"])))
+| extend OS = strcat(parse_json(tostring(UserAgentDetail.OperatingSystem)).Family," ",parse_json(tostring(UserAgentDetail.OperatingSystem)).MajorVersion,parse_json(tostring(UserAgentDetail. OperatingSystem)).MinorVersion)
+| extend UserAgentFamily = tostring(parse_json(tostring(UserAgentDetail.Browser)).Family)
+| extend UserAgentMajorVersion = toint(parse_json(tostring(UserAgentDetail.Browser)).MajorVersion)
+| extend UserAgentMinorVersion = toint(parse_json(tostring(UserAgentDetail.Browser)).MinorVersion)
+| where isnotempty(UserAgentMajorVersion)
+| extend UserAgentMinorVersion == iff(isempty(UserAgentMinorVersion),0,UserAgentMinorVersion)
+| summarize Count=count() by UserAgentFamily, UserAgentMajorVersion, UserAgentMinorVersion, OS
+| sort by Count
 ```
 
 Below is from https://www.kqlsearch.com/
