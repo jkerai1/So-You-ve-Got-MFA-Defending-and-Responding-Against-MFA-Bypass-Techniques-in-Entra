@@ -225,3 +225,7 @@ union SigninLogs,AADNonInteractiveUserSignInLogs
 | extend isFOCI = iff(isnotempty(ClientID), bool(1), bool(0)) //yield true if a join was possible between records of the two tables
 | project-away ClientID
 ```
+
+This Came out after my talk was delivered but is a comprehensive resource on AiTMs  
+
+https://github.com/Cloud-Architekt/AzureAD-Attack-Defense/blob/main/Adversary-in-the-Middle.md
