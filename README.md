@@ -229,3 +229,21 @@ union SigninLogs,AADNonInteractiveUserSignInLogs
 This Came out after my talk was delivered but is a comprehensive resource on AiTMs  
 
 https://github.com/Cloud-Architekt/AzureAD-Attack-Defense/blob/main/Adversary-in-the-Middle.md
+
+
+Look for Subdomains impersonating Microsoft
+
+```
+let MSFT_Domains = externaldata(Url:string)[@"https://raw.githubusercontent.com/HotCakeX/MicrosoftDomains/main/Microsoft%20Domains.txt"] with (format="csv");
+DeviceNetworkEvents 
+| where isnotempty(RemoteUrl) //Below is Clean Up - alternatively use a function 
+| extend Url = replace_string(RemoteUrl,'http://','')
+| extend Url = split(replace_string(Url,'https://',''),'/')[0]
+| extend Url = split(Url,':')[0] //remove Ports
+| extend Domain_split= split(Url,'.') //Split Out
+| where Domain_split[-1] != "microsoft" //Microsoft TLD is not of interest here
+| where strcat(Domain_split[-2],'.',Domain_split[-1]) !in (MSFT_Domains) //Microsoft domains, decent way to cut noise but not perfect will not catch function apps/sharepoints being abused
+| where Url has "microsoft"
+| summarize by tostring(Domain_split),tostring(Url), RemoteUrl
+
+```
