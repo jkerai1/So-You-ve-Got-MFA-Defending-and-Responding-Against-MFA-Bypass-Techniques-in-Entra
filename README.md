@@ -21,7 +21,9 @@ Smartscreen/Exploit Guard KQL:
 DeviceEvents
 | where ActionType == "SmartScreenUrlWarning" or ActionType == "ExploitGuardNetworkProtectionBlocked"
 ```
-Browser history/artifacts: https://www.linkedin.com/pulse/stealing-passwords-defender-endpoint-jay-kerai
+Browser history/artifacts: https://www.linkedin.com/pulse/stealing-passwords-defender-endpoint-jay-kerai  
+
+Attacker can Block outlook protection IPs in evilginx to prevent MDO detonation  
 
 __Slide 4:__
 Merill Fernado Demo: https://www.youtube.com/watch?v=tI1bdVohOK8
