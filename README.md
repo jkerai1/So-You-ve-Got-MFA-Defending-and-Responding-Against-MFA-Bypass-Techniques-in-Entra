@@ -217,9 +217,9 @@ https://www.microsoft.com/en-us/security/blog/2022/11/16/token-tactics-how-to-pr
 
 PS command for disabling OWA: Get-CASMailbox | Set-CASMailbox -OWAEnabled $false
 
-Misc:  
+__Misc__:  
 
-FOCI query Checking:  
+__FOCI query Checking:__    
 ```
 let FOCI = externaldata(ClientID: string, Application: string)[@"https://raw.githubusercontent.com/secureworks/family-of-client-ids-research/main/known-foci-clients.csv"] with (format="csv", ignoreFirstRecord=true);
 union SigninLogs,AADNonInteractiveUserSignInLogs
@@ -233,7 +233,7 @@ This Came out after my talk was delivered but is a comprehensive resource on AiT
 https://github.com/Cloud-Architekt/AzureAD-Attack-Defense/blob/main/Adversary-in-the-Middle.md
 
 
-Look for Subdomains impersonating Microsoft
+__Look for Subdomains impersonating Microsoft__  
 
 ```
 let MSFT_Domains = externaldata(Url:string)[@"https://raw.githubusercontent.com/HotCakeX/MicrosoftDomains/main/Microsoft%20Domains.txt"] with (format="csv");
