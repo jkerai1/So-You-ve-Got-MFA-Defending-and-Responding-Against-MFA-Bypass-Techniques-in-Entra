@@ -249,3 +249,5 @@ DeviceNetworkEvents
 | summarize by tostring(Domain_split),tostring(Url), RemoteUrl
 
 ```
+
+__Evilginx Pro Showcase__ https://www.youtube.com/watch?v=eBKq1_L_tFE
