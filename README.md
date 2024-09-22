@@ -250,5 +250,5 @@ DeviceNetworkEvents
 
 ```
 
-__Evilginx Pro Showcase__ https://www.youtube.com/watch?v=eBKq1_L_tFE
-__MDA Session Hand-over Damage control__ https://www.linkedin.com/posts/jay-kerai-cyber_aitms-entra-byod-activity-7243574769369976832-Zpeb
+__Evilginx Pro Showcase__ https://www.youtube.com/watch?v=eBKq1_L_tFE  
+__MDA Session Hand-over Damage control__ https://www.linkedin.com/posts/jay-kerai-cyber_aitms-entra-byod-activity-7243574769369976832-Zpeb  
