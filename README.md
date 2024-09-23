@@ -217,7 +217,7 @@ https://www.microsoft.com/en-us/security/blog/2022/11/16/token-tactics-how-to-pr
 
 PS command for disabling OWA: Get-CASMailbox | Set-CASMailbox -OWAEnabled $false
 
-__Misc__:  
+__Misc/Content Released after talk was given__:  
 
 __FOCI query Checking:__    
 ```
@@ -251,4 +251,6 @@ DeviceNetworkEvents
 ```
 
 __Evilginx Pro Showcase__ https://www.youtube.com/watch?v=eBKq1_L_tFE  
-__MDA Session Hand-over Damage control__ https://www.linkedin.com/posts/jay-kerai-cyber_aitms-entra-byod-activity-7243574769369976832-Zpeb  
+
+__MDA Session Hand-over Damage control__   
+https://www.linkedin.com/posts/jay-kerai-cyber_aitms-entra-byod-activity-7243574769369976832-Zpeb  / Youtube Video https://www.youtube.com/watch?v=y5KnadP8O7o  
