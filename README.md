@@ -201,7 +201,9 @@ DeviceNetworkEvents
 | where RemoteUrl in (CloudFlareWorkers) //example, use as you please
 ```
 
-Block Cloudflare domain post: https://www.linkedin.com/posts/jay-kerai-cyber_aitm-cloudflare-workers-activity-7225926416226263040-wCWW
+Block Cloudflare domain post: https://www.linkedin.com/posts/jay-kerai-cyber_aitm-cloudflare-workers-activity-7225926416226263040-wCWW  
+
+https://www.jackphilipbutton.com/post/how-to-protect-evilginx-using-cloudflare-and-html-obfuscation  
 
 link shorteners (biolinky[.]co, bit[.]ly, drp[.]li) 
 https://hackingblogs.com/hackers-use-url-shortner-to-hide-malicious-links-and-redirect-victims-to-phishing-pages/  
