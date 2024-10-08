@@ -230,7 +230,8 @@ union SigninLogs,AADNonInteractiveUserSignInLogs
 | project-away ClientID
 ```
 
-This Came out after my talk was delivered but is a comprehensive resource on AiTMs  
+# The Below came out after the talk or resources added post-talk
+
 
 https://github.com/Cloud-Architekt/AzureAD-Attack-Defense/blob/main/Adversary-in-the-Middle.md
 
@@ -251,8 +252,19 @@ DeviceNetworkEvents
 | summarize by tostring(Domain_split),tostring(Url), RemoteUrl
 
 ```
+![1726166418228](https://github.com/user-attachments/assets/b1b06d59-a1b6-4740-b84d-b390e02781a6)
+
 
 __Evilginx Pro Showcase__ https://www.youtube.com/watch?v=eBKq1_L_tFE  
 
 __MDA Session Hand-over Damage control__   
-https://www.linkedin.com/posts/jay-kerai-cyber_aitms-entra-byod-activity-7243574769369976832-Zpeb  / Youtube Video https://www.youtube.com/watch?v=y5KnadP8O7o  
+
+https://www.linkedin.com/posts/jay-kerai-cyber_aitms-entra-byod-activity-7243574769369976832-Zpeb  
+Youtube Video https://www.youtube.com/watch?v=y5KnadP8O7o  
+
+Accompanying Guide: https://github.com/jkerai1/SoftwareCertificates/tree/main/Bulk-IOC-CSVs/MDA
+
+__File hosting services misused for identity phishing/__
+https://www.microsoft.com/en-us/security/blog/2024/10/08/file-hosting-services-misused-for-identity-phishing/
+
+![Figure-1 -Example-attack-chain-1024x700](https://github.com/user-attachments/assets/da240d79-1f19-46b0-a589-a5348d88eae3)
