@@ -13,8 +13,8 @@ Shoutout to anyone who's content I have referenced/featured! They were really he
 
 __Slide 3: How to bypass MFA?__
 
-https://github.com/kgretzky/evilginx2  
-https://github.com/drk1wi/Modlishka
+ - https://github.com/kgretzky/evilginx2  
+ - https://github.com/drk1wi/Modlishka
 
 Smartscreen/Exploit Guard KQL:
 ```
@@ -260,11 +260,18 @@ __Evilginx Pro Showcase__ https://www.youtube.com/watch?v=eBKq1_L_tFE
 __MDA Session Hand-over Damage control__   
 
 https://www.linkedin.com/posts/jay-kerai-cyber_aitms-entra-byod-activity-7243574769369976832-Zpeb  
-Youtube Video https://www.youtube.com/watch?v=y5KnadP8O7o  
+Youtube Video https://www.youtube.com/watch?v=y5KnadP8O7o    
 
-Accompanying Guide: https://github.com/jkerai1/SoftwareCertificates/tree/main/Bulk-IOC-CSVs/MDA
+Check out my full guide [on MDA here](https://github.com/jkerai1/SoftwareCertificates/blob/main/Bulk-IOC-CSVs/MDA/)  
+
+| Addition of Randomly Generated Text into Phishing page to throw off Sandboxes such as safelinks    | Fake Login Page Created in between the AI/Randomly Generated Quotes|
+| ------------- | ------------- |
+|![Phish](https://github.com/user-attachments/assets/e03a76f1-cd41-46cd-90fd-ff1dbb510860)| ![image](https://github.com/user-attachments/assets/c8a30512-a539-4071-8bf6-edb4f657fd6b)
+
+
+  
 
 __File hosting services misused for identity phishing/__
 https://www.microsoft.com/en-us/security/blog/2024/10/08/file-hosting-services-misused-for-identity-phishing/
 
-![Figure-1 -Example-attack-chain-1024x700](https://github.com/user-attachments/assets/da240d79-1f19-46b0-a589-a5348d88eae3)
+![Figure-1 -Example-attack-chain-1024x700](https://github.com/user-attachments/assets/da240d79-1f19-46b0-a589-a5348d88eae3)  
