@@ -263,8 +263,6 @@ __MDA Session Hand-over Damage control__
 
 https://www.linkedin.com/posts/jay-kerai-cyber_aitms-entra-byod-activity-7243574769369976832-Zpeb  
 Youtube Video https://www.youtube.com/watch?v=y5KnadP8O7o    
-My MDA Bible: https://github.com/jkerai1/SoftwareCertificates/blob/main/Bulk-IOC-CSVs/MDA/readme.md#access-policy  
-
 Check out my full guide [on MDA here](https://github.com/jkerai1/SoftwareCertificates/blob/main/Bulk-IOC-CSVs/MDA/)  
 
 | Addition of Randomly Generated Text into Phishing page to throw off Sandboxes such as safelinks    | Fake Login Page Created in between the AI/Randomly Generated Quotes|
