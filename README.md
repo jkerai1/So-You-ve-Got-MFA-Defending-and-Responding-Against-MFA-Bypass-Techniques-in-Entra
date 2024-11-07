@@ -4,6 +4,8 @@ This talk was given as part of https://www.meetup.com/m365sandcug/events/3026442
 
 My intention is create a more formal writeup based on the content presented.
 
+Download the slide deck [here](https://github.com/jkerai1/So-You-ve-Got-MFA-Defending-and-Responding-Against-MFA-Bypass-Techniques-in-Entra/raw/refs/heads/main/So%20You've%20Got%20MFA%20-Defending%20and%20Responding%20Against%20MFA%20Bypass%20Techniques%20in%20Entra%20(Public%20Version).pptx)
+
 The videos have been stripped out for file size and replaced with public referenced videos instead.
 
 Shoutout to anyone who's content I have referenced/featured! They were really helpful for confirming my knowledge or teaching me new things :D
