@@ -261,6 +261,7 @@ __MDA Session Hand-over Damage control__
 
 https://www.linkedin.com/posts/jay-kerai-cyber_aitms-entra-byod-activity-7243574769369976832-Zpeb  
 Youtube Video https://www.youtube.com/watch?v=y5KnadP8O7o    
+My MDA Bible: https://github.com/jkerai1/SoftwareCertificates/blob/main/Bulk-IOC-CSVs/MDA/readme.md#access-policy  
 
 Check out my full guide [on MDA here](https://github.com/jkerai1/SoftwareCertificates/blob/main/Bulk-IOC-CSVs/MDA/)  
 
@@ -268,8 +269,6 @@ Check out my full guide [on MDA here](https://github.com/jkerai1/SoftwareCertifi
 | ------------- | ------------- |
 |![Phish](https://github.com/user-attachments/assets/e03a76f1-cd41-46cd-90fd-ff1dbb510860)| ![image](https://github.com/user-attachments/assets/c8a30512-a539-4071-8bf6-edb4f657fd6b)
 
-
-  
 
 __File hosting services misused for identity phishing/__
 https://www.microsoft.com/en-us/security/blog/2024/10/08/file-hosting-services-misused-for-identity-phishing/
