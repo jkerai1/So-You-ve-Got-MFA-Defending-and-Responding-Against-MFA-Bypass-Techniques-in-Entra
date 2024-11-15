@@ -274,3 +274,5 @@ __File hosting services misused for identity phishing/__
 https://www.microsoft.com/en-us/security/blog/2024/10/08/file-hosting-services-misused-for-identity-phishing/
 
 ![Figure-1 -Example-attack-chain-1024x700](https://github.com/user-attachments/assets/da240d79-1f19-46b0-a589-a5348d88eae3)  
+
+[How AitM phishing kits evade detection: Part 2](https://pushsecurity.com/blog/how-aitm-phishing-kits-evade-detection-p2)
