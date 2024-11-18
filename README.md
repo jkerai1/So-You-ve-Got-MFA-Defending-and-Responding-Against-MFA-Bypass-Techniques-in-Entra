@@ -118,8 +118,8 @@ https://github.com/nicolonsky/AzureAiTMFunction
 __Slide 24-28: Canary Token__  
 
 https://didsomeoneclone.me/  
-https://www.linkedin.com/pulse/punishing-aitms-using-css-flask-jay-kerai-ffrhe/
-
+https://www.linkedin.com/pulse/punishing-aitms-using-css-flask-jay-kerai-ffrhe/  
+https://insights.spotit.be/2024/06/03/clipping-the-canarys-wings-bypassing-aitm-phishing-detections/  
 
 __Slide 31: FIDO__  
 
