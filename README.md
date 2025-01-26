@@ -275,4 +275,8 @@ https://www.microsoft.com/en-us/security/blog/2024/10/08/file-hosting-services-m
 
 ![Figure-1 -Example-attack-chain-1024x700](https://github.com/user-attachments/assets/da240d79-1f19-46b0-a589-a5348d88eae3)  
 
-[How AitM phishing kits evade detection: Part 2](https://pushsecurity.com/blog/how-aitm-phishing-kits-evade-detection-p2)
+[How AitM phishing kits evade detection: Part 2](https://pushsecurity.com/blog/how-aitm-phishing-kits-evade-detection-p2)  
+
+[TokenSmith – Bypassing Intune Compliant Device Conditional Access](https://labs.jumpsec.com/tokensmith-bypassing-intune-compliant-device-conditional-access/) 
+
+Leveraging the fact Intune Compliance portal does not require a compliant device with Evilginx: [TokenSmith Meets Evilginx: Token Theft Combined with Entra Conditional Access Bypass](https://youtu.be/Dp1z8tMVWcM)
