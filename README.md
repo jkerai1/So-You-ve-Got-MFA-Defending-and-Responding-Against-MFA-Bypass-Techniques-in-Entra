@@ -221,6 +221,8 @@ https://www.microsoft.com/en-us/security/blog/2022/11/16/token-tactics-how-to-pr
 
 PS command for disabling OWA: Get-CASMailbox | Set-CASMailbox -OWAEnabled $false
 
+**UPDATE** Now the new outlook client is basically a PWA for OWA I would not touch OWA policies.  
+
 __Misc/Content Released after talk was given__:  
 
 __FOCI query Checking:__    
