@@ -284,3 +284,5 @@ https://www.microsoft.com/en-us/security/blog/2024/10/08/file-hosting-services-m
 Leveraging the fact Intune Compliance portal does not require a compliant device with Evilginx: [TokenSmith Meets Evilginx: Token Theft Combined with Entra Conditional Access Bypass](https://youtu.be/Dp1z8tMVWcM)  
 
 https://jeffreyappel.nl/aitm-mfa-phishing-attacks-in-combination-with-new-microsoft-protections-2023-edt/ 
+
+Using a terms of service Conditional Access can cause certain AiTMs to break: https://medium.com/@Sniffler/terms-of-what-1c05e191dc00  
